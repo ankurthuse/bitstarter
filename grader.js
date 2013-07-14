@@ -80,9 +80,10 @@ var clone = function(fn) {
 
 if(require.main == module) {
     program
+	.option('-c, --checks <check_file>', 'Path to checks.json')
         .option('-f, --file <html_file>', 'Path to index.html')
         .option('-u, --url <url>', 'URL to index.html')
-        .option('-c, --checks <check_file>', 'Path to checks.json')
+      
         .parse(process.argv);
     if (program.url) {
         checkUrl(program.url, program.checks);
